@@ -104,7 +104,9 @@ public class CollaborativeFilter {
         int lineCount = 0;
         try (BufferedReader in = new BufferedReader(reader)) { 
             for (String line = in.readLine(); line != null && in.ready(); line = in.readLine()) { 
-                JsonObject obj = parser.parse(line).getAsJsonObject();
+            	String[] keyValue = line.split("\t");
+            	LOGGER.info(line);
+                JsonObject obj = parser.parse(keyValue[1]).getAsJsonObject();
                 TableUtils.mergeInto(table, processPlayer(obj));
                 
                 lineCount++;
@@ -222,6 +224,13 @@ public class CollaborativeFilter {
     			.create("o");
     	options.addOption(output);
 
+    	@SuppressWarnings("static-access")
+    	Option help = OptionBuilder
+    			.withLongOpt("help")
+    			.withArgName("help")
+    			.create("h");
+    	options.addOption(help);
+
     	return options;
     }
     
@@ -239,6 +248,11 @@ public class CollaborativeFilter {
         	String input = line.getOptionValue("i");
         	String output = line.getOptionValue("o");
     		
+    		if (line.hasOption("h")) {
+    			printHelp(options);
+    			System.exit(1);
+    		}
+
         	CollaborativeFilter cf = CollaborativeFilter.Builder.create()
         			.withEmitter(Emitter.cosineWeighted)
         			.withRowNorm(false)

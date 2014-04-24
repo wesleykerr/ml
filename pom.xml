@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.wesleykerr</groupId>
   <artifactId>ml</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.3-SNAPSHOT</version>
   <name>Machine Learning</name>
   <description>a collection of machine learning libraries.</description>
 
@@ -17,6 +17,13 @@
           <url>scp://10.0.0.26/repo/releases</url>
           <layout>default</layout>
       </repository>
+      <snapshotRepository>
+        <uniqueVersion>true</uniqueVersion>
+        <id>ssh-snapshots</id>
+        <name>ETL Server Snapshots</name>
+        <url>scp://10.0.0.26/repo/snapshots</url>
+        <layout>default</layout> 
+      </snapshotRepository>
   </distributionManagement>
 
   <scm>
