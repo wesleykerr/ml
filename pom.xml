@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.wesleykerr</groupId>
   <artifactId>ml</artifactId>
-  <version>0.0.4-SNAPSHOT</version>
+  <version>0.0.5-SNAPSHOT</version>
   <name>Machine Learning</name>
   <description>a collection of machine learning libraries.</description>
 
