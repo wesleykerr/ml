@@ -104,9 +104,7 @@ public class CollaborativeFilter {
         int lineCount = 0;
         try (BufferedReader in = new BufferedReader(reader)) { 
             for (String line = in.readLine(); line != null && in.ready(); line = in.readLine()) { 
-            	String[] keyValue = line.split("\t");
-            	LOGGER.info(line);
-                JsonObject obj = parser.parse(keyValue[1]).getAsJsonObject();
+                JsonObject obj = parser.parse(line).getAsJsonObject();
                 TableUtils.mergeInto(table, processPlayer(obj));
                 
                 lineCount++;
