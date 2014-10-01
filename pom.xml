@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.wesleykerr</groupId>
   <artifactId>ml</artifactId>
-  <version>0.0.8</version>
+  <version>0.0.9-SNAPSHOT</version>
   <name>Machine Learning</name>
   <description>a collection of machine learning libraries.</description>
 
@@ -29,7 +29,7 @@
   <scm>
       <connection>scm:git:git@github.com:wesleykerr/ml.git</connection>
       <developerConnection>scm:git:git@github.com:wesleykerr/ml.git</developerConnection>
-      <tag>ml-0.0.8</tag>
+      <tag>HEAD</tag>
   </scm>
 
   <dependencies>
