@@ -86,11 +86,13 @@ public class CollaborativeFilterTest {
         cfA = CollaborativeFilter.Builder.create()
                 .withEmitter(Emitter.cosineWeighted)
                 .withRowNorm(false)
+                .withMinFreq(1)
                 .build();
 
         cfB = CollaborativeFilter.Builder.create()
                 .withEmitter(Emitter.cosine)
                 .withRowNorm(false)
+                .withMinFreq(1)
                 .build();
     }
     
